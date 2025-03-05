@@ -20,14 +20,22 @@ export default function ButtonCard() {
   return (
     <View style={styles.container}>
       {buttons.map((btn, index) => (
-        <TouchableOpacity 
-          key={index} 
-          style={[styles.card, { width: btn.width, height: btn.height }]} 
+        <TouchableOpacity
+          key={index}
+          style={[styles.card, { width: btn.width, height: btn.height }]}
           onPress={() => {
             if (btn.title === 'Randevular') {
               setModalVisible(true);
             } else if (btn.title === 'Sağlık Dosyam') {
               navigation.navigate('SaglıkDosyam');
+            } else if (btn.title === 'Hastaneler ve Hekimler') {
+              navigation.navigate('HospitalAndHekimPage');
+            } else if (btn.title === 'İlaç Takibi') {
+              navigation.navigate('MedicineControlPage');
+            } else if (btn.title === 'En Yakın Medicana') {
+              setModalVisible(true);
+            } else if (btn.title === 'Yakınlarım') {
+              navigation.navigate('YakınlarımPage'); // YENİ YÖNLENDİRME
             }
           }}
         >
@@ -44,20 +52,14 @@ export default function ButtonCard() {
         onRequestClose={() => setModalVisible(false)}
       >
         <View style={styles.modalBackground}>
-        <BlurView 
-  style={styles.blurView} 
-  blurType="light" 
-  blurAmount={20} 
-  reducedTransparencyFallbackColor="white" 
-/>
+          <BlurView style={styles.blurView} blurType="light" blurAmount={20} />
           <View style={styles.modalContainer}>
             <Image source={require('../../Assets/Allert.png')} style={styles.alertImage} />
-            <Text style={styles.modalText}>Bu özelliği kullanabilmek için profilinizi güncelleyin.</Text>
-            <TouchableOpacity style={styles.modalButton} onPress={() => { setModalVisible(false); navigation.navigate('ProfiliDuzenlePage'); }}>
+            <Text style={styles.modalText}>
+              Konumunuz kapalı. Lütfen cihaz ayarlarınızdan konumunuzu açınız.
+            </Text>
+            <TouchableOpacity style={styles.modalButton} onPress={() => setModalVisible(false)}>
               <Text style={styles.modalButtonText}>Tamam</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.cancelButton} onPress={() => setModalVisible(false)}>
-              <Text style={styles.cancelButtonText}>Vazgeç</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -106,7 +108,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
   },
-
   blurView: {
     position: 'absolute',
     width: '100%',
@@ -118,6 +119,7 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
     alignItems: 'center',
+    elevation: 10,
   },
   alertImage: {
     width: 90,
@@ -128,7 +130,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'black',
     textAlign: 'center',
-    marginBottom: 35,
+    marginBottom: 20,
   },
   modalButton: {
     backgroundColor: '#042387',
@@ -139,21 +141,6 @@ const styles = StyleSheet.create({
   },
   modalButtonText: {
     color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  cancelButton: {
-    backgroundColor: 'white',
-    padding: 12,
-    width: '100%',
-    alignItems: 'center',
-    borderRadius: 5,
-    marginTop: 10,
-    borderWidth: 1,
-    borderColor: '#042387',
-  },
-  cancelButtonText: {
-    color: '#042387',
     fontSize: 16,
     fontWeight: 'bold',
   },

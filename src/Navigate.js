@@ -13,6 +13,13 @@ import ProfiliDuzenlePage from '../Src/Pages/HomePage/ProfiliDuzenlePage'; // Do
 import DoctorSearchPage from '../Src/Pages/HomePage/DoctorSearchPage'; // Dosya yolunu kendi yapına göre ayarla
 import SaglıkDosyam from '../Src/Pages/HomePage/SaglıkDosyam'; // Dosya yolunu kendi yapına göre ayarla
 import ProfilPage from '../Src/Pages/HomePage/ProfilPage'; // Dosya yolunu kendi yapına göre ayarla
+import HospitalAndHekimPage from '../Src/Pages/HomePage/HospitalAndHekimPage'; // Dosya yolunu kendi yapına göre ayarla
+import HospitalsPage from '../Src/Pages/HomePage/HospitalsPage'; // Dosya yolunu kendi yapına göre ayarla
+import HospitalInfoPage from '../Src/Pages/HomePage/HospitalInfoPage'; // Dosya yolunu kendi yapına göre ayarla
+import HekimlerPage from '../Src/Pages/HomePage/HekimlerPage'; // Dosya yolunu kendi yapına göre ayarla
+import DoctorInfoPage from '../Src/Pages/HomePage/DoctorInfoPage'; // Dosya yolunu kendi yapına göre ayarla
+import MedicineControlPage from '../Src/Pages/HomePage/MedicineControlPage'; // Dosya yolunu kendi yapına göre ayarla
+import YakınlarımPage from '../Src/Pages/HomePage/YakınlarımPage'; // Dosya yolunu kendi yapına göre ayarla
 
 const Stack = createStackNavigator();
 
@@ -29,10 +36,40 @@ export default function Navigate() {
           component={LoginPage} 
           options={{ headerShown: false }} // Sadece HomeScreen başlığını kaldırdık
           />
+          <Stack.Screen 
+          name="YakınlarımPage" 
+          component={YakınlarımPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="MedicineControlPage" 
+          component={MedicineControlPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="HekimlerPage" 
+          component={HekimlerPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="DoctorInfoPage" 
+          component={DoctorInfoPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="HospitalInfoPage" 
+          component={HospitalInfoPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
          <Stack.Screen 
           name="SignupPage" 
           component={SignupPage} 
           options={{ headerShown: false }} // Sadece HomeScreen başlığını kaldırdık
+        />
+         <Stack.Screen 
+          name="HospitalsPage" 
+          component={HospitalsPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
         />
          <Stack.Screen 
           name="Verify" 
@@ -78,6 +115,11 @@ export default function Navigate() {
           name="AutPage" 
           component={AutPage} 
           options={{ headerShown: false }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="HospitalAndHekimPage" 
+          component={HospitalAndHekimPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
           />
            <Stack.Screen 
           name="OtpPage" 
