@@ -133,22 +133,26 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#042387',
   },
+
+  // BÜYÜTÜLMÜŞ BACKGROUND PERMISSIONS CONTAINER
   permissionsContainer: {
     flexDirection: 'row',
-    backgroundColor: '#042387',
-    borderRadius: 10,
+    backgroundColor: '#042387', // Tam arka planı büyüttüm
+    borderRadius: 15, // Kenarları daha belirgin yuvarladım
+    padding: 5, // İç boşluğu artırdım
     overflow: 'hidden',
     shadowColor: '#000',
     shadowOffset: { width: 2, height: 4 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 6,
+    marginHorizontal: 0, // Kenarlardan biraz boşluk
   },
   tab: {
     flex: 1,
-    padding: 12,
+    paddingVertical: 14, // Butonları büyüttüm
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 12, // Kenarları daha yuvarladım
   },
   activeTab: {
     backgroundColor: 'white',

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, FlatList, Image } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 
-const doctors = Array.from({ length: 20 }, (_, index) => ({
+const doctors = Array.from({ length: 10 }, (_, index) => ({
   id: index.toString(),
   title: ['Uzm. Dr.', 'Prof. Dr.', 'Op. Dr.'][index % 3],
   name: `A. ${['Erdal İbanoğlu', 'Murat Müslüman', 'Bedri Özer', 'Kadir Ercan', 'Özlem Gündeşlioğlu'][index % 5]}`,
-  hospital: `Medicana ${['Ataköy', 'Zincirlikuyu', 'International İstanbul - Beylikdüzü', 'Bursa', 'International İzmir'][index % 5]}`,
-  specialty: ['Anestezi Ve Reanimasyon', 'Beyin Ve Sinir Cerrahisi', 'Kulak Burun Boğaz', 'Kalp Ve Damar Cerrahisi'][index % 4],
+  hospital: `Medicana ${['Ataköy', 'Zincirlikuyu', 'Beylikdüzü', 'Bursa', 'İzmir'][index % 5]}`,
+  specialty: ['Anestezi Ve Reanimasyon', 'Sinir Cerrahisi', 'Kulak Burun Boğaz', 'Kalp Ve Damar Cerrahisi'][index % 4],
 }));
 
 export default function HekimlerPage({ navigation }) {
@@ -21,6 +22,7 @@ export default function HekimlerPage({ navigation }) {
       <View style={styles.header}>
         <Text style={styles.headerText}>Bütün Hekimler</Text>
         <View style={styles.searchContainer}>
+          <FontAwesome name="search" size={20} color="#042387" style={styles.searchIcon} />
           <TextInput
             style={styles.searchInput}
             placeholder="Hekim Ara"
@@ -46,7 +48,7 @@ export default function HekimlerPage({ navigation }) {
               </View>
             </View>
             <Image source={require('../../Assets/randevular.png')} style={styles.calendarIcon} />
-            <Text style={styles.arrow}>&gt;</Text>
+            <FontAwesome name="chevron-right" size={18} color="#19A7CE" style={styles.arrowIcon} />
           </TouchableOpacity>
         )}
         contentContainerStyle={styles.listContentContainer}
@@ -74,18 +76,23 @@ const styles = StyleSheet.create({
   },
   searchContainer: {
     flexDirection: 'row',
-    marginTop: 10,
     alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    marginTop: 10,
+  },
+  searchIcon: {
+    marginRight: 8,
   },
   searchInput: {
     flex: 1,
-    backgroundColor: 'white',
-    borderRadius: 10,
     padding: 10,
   },
   filterButton: {
     backgroundColor: '#19A7CE',
-    padding: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     borderRadius: 10,
     marginLeft: 10,
   },
@@ -100,7 +107,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'white',
-    margin: 10,
+    marginHorizontal: 10,
+    marginVertical: 5,
     padding: 15,
     borderRadius: 10,
     shadowColor: '#000',
@@ -150,22 +158,27 @@ const styles = StyleSheet.create({
     height: 30,
     marginRight: 10,
   },
-  arrow: {
+  arrowIcon: {
     fontSize: 18,
-    color: '#19A7CE',
     fontWeight: 'bold',
   },
   backButton: {
     backgroundColor: 'white',
-    padding: 15,
+    padding: 16,
+    marginHorizontal: 16,
+    marginBottom: 20,
+    borderRadius: 8,
     alignItems: 'center',
-    borderTopWidth: 1,
-    borderColor: '#ddd',
-    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 1, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 4,
   },
   backButtonText: {
+    color: 'blue',
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#042387',
   },
 });
+

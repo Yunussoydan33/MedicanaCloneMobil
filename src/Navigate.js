@@ -14,12 +14,24 @@ import DoctorSearchPage from '../Src/Pages/HomePage/DoctorSearchPage'; // Dosya 
 import SaglıkDosyam from '../Src/Pages/HomePage/SaglıkDosyam'; // Dosya yolunu kendi yapına göre ayarla
 import ProfilPage from '../Src/Pages/HomePage/ProfilPage'; // Dosya yolunu kendi yapına göre ayarla
 import HospitalAndHekimPage from '../Src/Pages/HomePage/HospitalAndHekimPage'; // Dosya yolunu kendi yapına göre ayarla
-import HospitalsPage from '../Src/Pages/HomePage/HospitalsPage'; // Dosya yolunu kendi yapına göre ayarla
+import HospitalsPage from '../Src/Pages/HospitalAndHekimPage/HospitalsPage'; // Dosya yolunu kendi yapına göre ayarla
 import HospitalInfoPage from '../Src/Pages/HomePage/HospitalInfoPage'; // Dosya yolunu kendi yapına göre ayarla
-import HekimlerPage from '../Src/Pages/HomePage/HekimlerPage'; // Dosya yolunu kendi yapına göre ayarla
+import HekimlerPage from '../Src/Pages/HospitalAndHekimPage/HekimlerPage'; // Dosya yolunu kendi yapına göre ayarla
 import DoctorInfoPage from '../Src/Pages/HomePage/DoctorInfoPage'; // Dosya yolunu kendi yapına göre ayarla
 import MedicineControlPage from '../Src/Pages/HomePage/MedicineControlPage'; // Dosya yolunu kendi yapına göre ayarla
 import YakınlarımPage from '../Src/Pages/HomePage/YakınlarımPage'; // Dosya yolunu kendi yapına göre ayarla
+import SuHatırlatPage from '../Src/Pages/HomePage/SuHatırlatPage'; // Dosya yolunu kendi yapına göre ayarla
+import SettingsPage from '../Src/Pages/HomePage/SettingsPage'; // Dosya yolunu kendi yapına göre ayarla
+import LanguagePage from '../Src/Pages/Settingpage/LanguagePage'; // Dosya yolunu kendi yapına göre ayarla
+import ContactPage from '../Src/Pages/Settingpage/ContactPage'; // Dosya yolunu kendi yapına göre ayarla
+import SozlesmePage from '../Src/Pages/Settingpage/SozlesmePage'; // Dosya yolunu kendi yapına göre ayarla
+import SıkSorulanPage from '../Src/Pages/Settingpage/SıkSorulanPage'; // Dosya yolunu kendi yapına göre ayarla
+import TıbbiBirimlerPage from '../Src/Pages/HospitalAndHekimPage/TıbbiBirimlerPage'; // Dosya yolunu kendi yapına göre ayarla
+import Tıbbibirim2Page from '../Src/Pages/HospitalAndHekimPage/Tıbbibirim2Page'; // Dosya yolunu kendi yapına göre ayarla
+import GenelBilgilerPage from '../Src/Pages/HospitalAndHekimPage/GenelBilgilerPage'; // Dosya yolunu kendi yapına göre ayarla
+import OdalarPage from '../Src/Pages/HospitalAndHekimPage/OdalarPage'; // Dosya yolunu kendi yapına göre ayarla
+import MedicalTeknoloPage from '../Src/Pages/HospitalAndHekimPage/MedicalTeknoloPage'; // Dosya yolunu kendi yapına göre ayarla
+import SunulanHizmetPage from '../Src/Pages/HospitalAndHekimPage/SunulanHizmetPage'; // Dosya yolunu kendi yapına göre ayarla
 
 const Stack = createStackNavigator();
 
@@ -35,6 +47,66 @@ export default function Navigate() {
           name="LoginPage" 
           component={LoginPage} 
           options={{ headerShown: false }} // Sadece HomeScreen başlığını kaldırdık
+          />
+            <Stack.Screen 
+          name="SunulanHizmetPage" 
+          component={SunulanHizmetPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="MedicalTeknoloPage" 
+          component={MedicalTeknoloPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="GenelBilgilerPage" 
+          component={GenelBilgilerPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="OdalarPage" 
+          component={OdalarPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="Tıbbibirim2Page" 
+          component={Tıbbibirim2Page} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="TıbbiBirimlerPage" 
+          component={TıbbiBirimlerPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="LanguagePage" 
+          component={LanguagePage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="SozlesmePage" 
+          component={SozlesmePage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="SıkSorulanPage" 
+          component={SıkSorulanPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="ContactPage" 
+          component={ContactPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+          <Stack.Screen 
+          name="SettingsPage" 
+          component={SettingsPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
+          />
+           <Stack.Screen 
+          name="SuHatırlatPage" 
+          component={SuHatırlatPage} 
+          options={{ headerShown: true }} // Sadece HomeScreen başlığını kaldırdık
           />
           <Stack.Screen 
           name="YakınlarımPage" 
